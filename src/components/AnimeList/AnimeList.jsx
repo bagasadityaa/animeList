@@ -14,9 +14,7 @@ const AnimeList = ({ api }) => {
           >
             <div className="relative bg-white rounded-lg overflow-hidden shadow-md">
               {/* Tambahkan tampilan durasi di kanan bawah */}
-              <span className="absolute bottom-2 right-2 bg-black text-white px-2 py-1 rounded">
-                3:45 {/* Durasi contoh */}
-              </span>
+
               <Image
                 src={anime.images.webp.image_url}
                 alt={anime.title}
