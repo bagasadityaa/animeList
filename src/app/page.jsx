@@ -8,9 +8,6 @@ import {
 } from "../libs/api-libs";
 
 const Page = async () => {
-  // const response = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=3`
-  // );
   const topAnime = await getAnimeResponse("top/anime", "limit=8");
   let rekomendasiAnime = await getNestedAnimeResponse(
     "recommendations/anime",
@@ -28,11 +25,7 @@ const Page = async () => {
         <AnimeList api={topAnime} />
       </section>
       <section>
-        <Header
-          title="Rekomendasi"
-          // linkTitle="Lihat Semua"
-          // linkHref="/populer"
-        />
+        <Header title="Rekomendasi" />
         <AnimeList api={rekomendasiAnime} />
       </section>
     </>
