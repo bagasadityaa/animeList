@@ -17,16 +17,16 @@ const Page = async () => {
   return (
     <>
       <section>
+        <Header title="Rekomendasi" />
+        <AnimeList api={rekomendasiAnime} />
+      </section>
+      <section>
         <Header
           title="Paling Populer"
           linkTitle="Lihat Semua"
           linkHref="/populer"
         />
         <AnimeList api={topAnime} />
-      </section>
-      <section>
-        <Header title="Rekomendasi" />
-        <AnimeList api={rekomendasiAnime} />
       </section>
     </>
   );
