@@ -8,12 +8,13 @@ import {
 } from "../libs/api-libs";
 
 const Page = async () => {
-  const topAnime = await getAnimeResponse("top/anime", "limit=8");
+  const topAnime = await getAnimeResponse("top/anime", "limit=10");
+  const seasonAnime = await getAnimeResponse("seasons/now", "limit=10");
   let rekomendasiAnime = await getNestedAnimeResponse(
     "recommendations/anime",
     "entry"
   );
-  rekomendasiAnime = reproduce(rekomendasiAnime, 8);
+  rekomendasiAnime = reproduce(rekomendasiAnime, 10);
   return (
     <>
       <section>
@@ -27,6 +28,14 @@ const Page = async () => {
           linkHref="/populer"
         />
         <AnimeList api={topAnime} />
+      </section>
+      <section>
+        <Header
+          title="Seasons Anime"
+          linkTitle="Lihat Semua"
+          linkHref="/seasons"
+        />
+        <AnimeList api={seasonAnime} />
       </section>
     </>
   );
